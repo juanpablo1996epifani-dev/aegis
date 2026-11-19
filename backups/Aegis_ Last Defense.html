@@ -104,22 +104,86 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Aegis: Last Defense" startnode="1" creator="Twine" creator-version="2.12.1" format="SugarCube" format-version="2.37.3" ifid="47A74975-23DA-44F7-B709-7F6A627466E5" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-a.link-replace {
+	<tw-storydata name="Aegis: Last Defense" startnode="1" creator="Twine" creator-version="2.12.1" format="SugarCube" format-version="2.37.3" ifid="47A74975-23DA-44F7-B709-7F6A627466E5" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* gold color: #f0b35a;
+ cyan color: #8abebe;
+*/
+html {
+	color: #8abebe;
+}
+
+h3 {
+	margin: 0;
+  color: #f0b35a;
+}
+
+
+.container-class {
+    position: relative;
+    transition: background-color .2s, border-color .2s;
+}
+
+.container-class:hover {
+    border-color: #f0b35a;
+    background-color: #21344a;
+}
+
+.container-class .macro-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: absolute;
+    inset: 0;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    color: #f0b35a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-class .macro-link:hover {
+    color: #f0b35a;
+}
+
+
+a.link-replace  {
   color: #f0b35a;
   text-shadow: 0 0 8px #d8a34b;
   animation: adamant-pulse 2s ease-in-out infinite;
 }
 
+
+/* Shared styling */
 .discipline-voice {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 16px;
-  color: #f0b35a;
-  border-left: 3px solid #d8a34b;
-  background: #2c261c;
-  border-radius: 16px;
+    display: flex;
+  	flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border-left: 3px solid;
+    border-radius: 16px;
+}
+
+/* Adamant */
+.adamant {
+    color: #f0b35a;
+    border-color: #d8a34b;
+    background: #2c261c;
+}
+
+/* Noetarch */
+.noetarch {
+    color: #8acbd5;
+    border-color: #62aab9;
+    background: #1c2b32;
+}
+
+/* Anamnesist */
+.anamnesist {
+    color: #c5a9ec;
+    border-color: #a18acb;
+    background: #292235;
 }
 
 
@@ -131,6 +195,58 @@ a.link-replace {
     color: #8abebe;
     cursor: help;
 }
+
+
+.main-menu {
+    max-width: 650px;
+    margin: 12vh auto;
+    text-align: center;
+}
+
+.main-menu h1 {
+    font-size: 3rem;
+    letter-spacing: 0.15em;
+    color: #f0b35a;
+}
+
+.menu-subtitle {
+    color: #8abebe;
+    letter-spacing: 0.25em;
+}
+
+.menu-actions {
+    margin-top: 4rem;
+}
+
+.menu-actions a {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #8abebe;
+    color: #f0b35a;
+    text-decoration: none;
+}
+
+.menu-actions a:hover {
+    background: #304861;
+}
+
+.container-class {
+	padding: 12px 32px;
+  border: 1px solid #8abebe;
+}
+
+.no-br > br {
+	display: none
+}
+
+.container-cards {
+	display: flex;
+  	gap: 8px;
+    justify-content: space-between;
+  	text-align: center;
+  color: #8abebe;
+}
+
 
 @keyframes adamant-pulse {
   0%, 100% {
@@ -231,6 +347,49 @@ setup.disciplines = {
 };
 
 
+setup.characterPresets = {
+    adamant: {
+        name: "The Unyielding",
+        adamant: 4,
+        noetarch: 1,
+        anamnesist: 2
+    },
+    noetarch: {
+        name: "The Scholar",
+        adamant: 2,
+        noetarch: 4,
+        anamnesist: 1
+    },
+    anamnesist: {
+        name: "The Seer",
+        adamant: 1,
+        noetarch: 2,
+        anamnesist: 4
+    }
+};
+
+setup.applyCharacterPreset = function (id) {
+    const preset = setup.characterPresets[id];
+
+    if (!preset) {
+        throw new Error(`Unknown preset: ${id}`);
+    }
+
+    const character = State.variables.character;
+
+    character.archetype = id;
+
+    for (const disciplineId of [
+        "adamant",
+        "noetarch",
+        "anamnesist"
+    ]) {
+        character.disciplines[disciplineId].level =
+            preset[disciplineId];
+    }
+};
+
+
 
 setup.rollSkill = function (disciplineId, skillId, threshold) {
   const discipline = State.variables.character
@@ -253,11 +412,16 @@ setup.rollSkill = function (disciplineId, skillId, threshold) {
   };
 };
 
-</script><tw-tag name="widget" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-passagedata pid="1" name="Untitled Passage" tags="" position="900,400" size="100,100">
-The figure refuses to move.
+</script><tw-tag name="widget" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-passagedata pid="1" name="MainMenu" tags="" position="200,400" size="100,100">
+&lt;div class=&quot;main-menu&quot;&gt;
+    &lt;h1&gt;AEGIS&lt;/h1&gt;
+    &lt;p class=&quot;menu-subtitle&quot;&gt;LAST DEFENSE&lt;/p&gt;
 
-&lt;&lt;disciplinePrompt &quot;adamant&quot; &quot;endurance&quot; 9 &quot;Words have failed you.&quot;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="2" name="DisciplineWidgets" tags="widget nobr" position="900,100" size="100,100">
+    &lt;div class=&quot;menu-actions&quot;&gt;
+        [[NEW GAME-&gt;CharacterCreation]]
+    &lt;/div&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="2" name="DisciplineWidgets" tags="widget nobr" position="200,0" size="100,100">
 &lt;&lt;widget &quot;disciplinePrompt&quot;&gt;&gt;
     &lt;&lt;set _disciplineId = _args[0]&gt;&gt;
     &lt;&lt;set _skillId = _args[1]&gt;&gt;
@@ -286,9 +450,9 @@ The figure refuses to move.
             &lt;&lt;set _tooltip = &quot;Total: &quot; +  _total + &quot; / Threshold: &quot; + _threshold&gt;&gt;
 
             &lt;&lt;if _passed || _showFailure&gt;&gt;
-                &lt;&lt;capture _prompt _name _skillName _line _failureLine _passed _status _tooltip&gt;&gt;
+                &lt;&lt;capture _disciplineId _prompt _name _skillName _line _failureLine _passed _status _tooltip&gt;&gt;
                     &lt;span class=&quot;adamant-prompt&quot;&gt;
-                        &lt;&lt;linkreplace _prompt&gt;&gt;&lt;&lt;if _passed&gt;&gt;&lt;&lt;discipline _name _skillName _line  _status&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;discipline _name _skillName _failureLine  _status _tooltip&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
+                        &lt;&lt;linkreplace _prompt&gt;&gt;&lt;&lt;if _passed&gt;&gt;&lt;&lt;discipline _disciplineId _skillName _line  _status&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;discipline  _disciplineId _skillName _failureLine  _status _tooltip&gt;&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
                     &lt;/span&gt;
                 &lt;&lt;/capture&gt;&gt;
             &lt;&lt;/if&gt;&gt;
@@ -296,11 +460,11 @@ The figure refuses to move.
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 
-&lt;&lt;widget &quot;status&quot; &gt;&gt;&lt;span class=&quot;passive-result&quot; @title=&quot;_args[4]&quot;&gt;(&lt;&lt;= _args[0]&gt;&gt;)&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget &quot;status&quot; &gt;&gt;&lt;span class=&quot;passive-result&quot; @title=&quot;_args[1]&quot;&gt;(&lt;&lt;= _args[0]&gt;&gt;)&lt;/span&gt;&lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;discipline&quot;&gt;&gt;
-    &lt;div class=&quot;discipline-voice&quot;&gt;&lt;strong class=&quot;discipline-name&quot;&gt;&lt;&lt;= _args[1]&gt;&gt;:&lt;/strong&gt; &lt;&lt;status _args[3] _args[4] &gt;&gt; &lt;span class=&quot;discipline-text&quot;&gt; &lt;&lt;= _args[2]&gt;&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="1100,100" size="100,100">
+    &lt;div @class=&quot;&#39;discipline-voice &#39; + _args[0]&quot;&gt;&lt;strong class=&quot;discipline-name&quot;&gt;&lt;&lt;= _args[1]&gt;&gt;: &lt;&lt;status _args[3] _args[4] &gt;&gt; &lt;/strong&gt; &lt;span class=&quot;discipline-text&quot;&gt; &lt;&lt;= _args[2]&gt;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="0,0" size="100,100">
 &lt;&lt;set $character = {
   name: &quot;Unknown&quot;,
 
@@ -339,6 +503,78 @@ The figure refuses to move.
     }
   }
 }&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="CharacterCreation" tags="" position="200,600" size="100,100">
+&lt;h2&gt;CHARACTER CREATION&lt;/h2&gt;
+&lt;p&gt;Three voices inhabit the mind. Some speak louder than others.&lt;/p&gt;
+
+&lt;div class=&quot;container-cards no-br&quot;&gt;
+
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE UNYIELDING&lt;/h3&gt;
+        &lt;p&gt;Adamant 4 / Noetarch 1 / Anamnesist 2&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Unyielding&quot; &quot;CharacterConfirmation&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;adamant&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE SCHOLAR&lt;/h3&gt;
+        &lt;p&gt;Adamant 2 / Noetarch 4 / Anamnesist 1&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Scholar&quot; &quot;CharacterConfirmation&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;noetarch&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE SEER&lt;/h3&gt;
+        &lt;p&gt;Adamant 1 / Noetarch 2 / Anamnesist 4&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Seer&quot; &quot;CharacterConfirmation&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;anamnesist&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+[[Return to Main Menu-&gt;MainMenu]]
+</tw-passagedata><tw-passagedata pid="5" name="CharacterConfirmation" tags="" position="200,800" size="100,100">&lt;h2&gt;YOUR CHARACTER&lt;/h2&gt;
+
+&lt;p&gt;Three voices. One mind.&lt;/p&gt;
+
+&lt;div class=&quot;character-summary no-br&quot;&gt;
+    &lt;h3&gt;YOUR DISCIPLINES&lt;/h3&gt;
+
+&lt;div class=&quot;container-cards&quot; &gt;
+&lt;p&gt;&lt;strong&gt;Adamant:&lt;/strong&gt; &lt;&lt;= $character.disciplines.adamant.level&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Noetarch:&lt;/strong&gt; &lt;&lt;= $character.disciplines.noetarch.level&gt;&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Anamnesist:&lt;/strong&gt; &lt;&lt;= $character.disciplines.anamnesist.level&gt;&gt;&lt;/p&gt;
+&lt;/div&gt;
+    
+&lt;/div&gt;
+
+&lt;div class=&quot;character-actions container-cards menu-actions&quot;&gt;
+    [[Begin-&gt;Chapter01_Introduction]]
+    [[Choose Another Archetype-&gt;CharacterCreation]]
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="6" name="Chapter01_Introduction" tags="" position="600,400" size="100,100">&lt;h2&gt;The Awakening&lt;/h2&gt;
+An inky blackness stretches beyond all measure. Boundless. Edgeless. No earth beneath you. No heavens above. Not even the mercy of a grave.
+
+Here, there is no weight to carry. No ache of flesh. No name to answer to.
+
+Yet there is an insistence. Faint, almost imperceptible. Something that ought to have a name. A face. A place among the living.
+
+&lt;div class=&quot;no-br&quot; &gt;
+&lt;&lt;disciplinePrompt &quot;adamant&quot; &quot;endurance&quot; 9 &quot;You are not gone. Not yet. But you brought us very close to the end.&quot;&gt;&gt;
+
+&lt;&lt;disciplinePrompt &quot;noetarch&quot; &quot;analysis&quot; 9 &quot;You are reawakening. If we must draw a conclusion, we are lying on a mattress. Or fermenting inside a coffin. We have no more evidence to favor one over the other.&quot;&gt;&gt;
+
+&lt;&lt;disciplinePrompt &quot;anamnesist&quot; &quot;oneirology&quot; 9 &quot;A starless night sky. It is no ill omen, but we are astray. Elder one. You have given form to its absence...&quot;&gt;&gt;
+&lt;/div&gt;
+A thoughtless impulse draws you towards it.
 </tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
