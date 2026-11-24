@@ -557,6 +557,7 @@ a.link-replace  {
 
 /* Aegis custom modal */
 #aegis-unused-placeholder {
+    position: relative;
 }
 
 /* Dialog container */
@@ -646,7 +647,8 @@ a.link-replace  {
 .skill-allocation-actions a:hover {
     background: #304861;
     color: #f0b35a;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">setup.disciplines = {
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "Story JavaScript" */
+setup.disciplines = {
   adamant: {
     id: "adamant",
     name: "The Adamant",
@@ -1111,7 +1113,9 @@ setup.confirmSkillDraft = function () {
     setup.resetSkillDraft();
 
     return true;
-};</script><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="widget" color="purple"></tw-tag><tw-passagedata pid="1" name="MainMenu" tags="" position="100,200" size="100,100">&lt;div class=&quot;main-menu&quot;&gt;
+};
+/* twine-user-script #2: "game.js" */
+</script><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="widget" color="purple"></tw-tag><tw-passagedata pid="1" name="MainMenu" tags="" position="100,200" size="100,100">&lt;div class=&quot;main-menu&quot;&gt;
     &lt;h1&gt;AEGIS&lt;/h1&gt;
     &lt;p class=&quot;menu-subtitle&quot;&gt;LAST DEFENSE&lt;/p&gt;
 
