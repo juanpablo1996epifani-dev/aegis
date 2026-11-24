@@ -1,0 +1,32 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Coverage tool (specifically when used with LiteIDE)
+*.out
+
+# Scripts
+*.sh
+
+# Documentation
+*.html
+
+# Dependencies
+go.sum
+
+# Builds & distribution
+dist/
+licenses/
+
+# Testing
+storyformats/
+prerelease.go
+
+# Miscellaneous
+_*
+CHANGELOG*
+TODO*
