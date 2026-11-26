@@ -1,0 +1,29 @@
+
+:: Chapter01_Introduction {"position":"300,200","size":"200,200"}
+<h2>The Awakening</h2>
+An inky blackness stretches beyond all measure. Boundless. Edgeless. No earth beneath you. No heavens above. Not even the mercy of a grave.
+
+Here, there is no weight to carry. No ache of flesh. No name to answer to.
+
+Yet there is an insistence. Faint, almost imperceptible. Something that ought to have a name. A face. A place among the living.
+
+<div class="no-br" >
+
+<<disciplinePrompt
+    "adamant"
+    "endurance"
+    9
+    "You are not gone. Not yet. But you brought us very close to the end."
+    false
+    ""
+    "AwakeningAdamantRes_0"
+    "I have done this to myself?"
+>>
+
+
+<<disciplinePrompt "noetarch" "analysis" 9 "You are reawakening. If we must draw a conclusion, we are lying on a mattress. Or fermenting inside a coffin. We have no more evidence to favor one over the other.">>
+
+<<disciplinePrompt "anamnesist" "oneirology" 9 "A starless night sky. It is no ill omen, but we are astray. Elder one. You have given form to its absence...">>
+</div>
+A thoughtless impulse draws you towards it.
+<<revealNext "Awakening_Body" "CONTINUE" "Awakening_Questions">>

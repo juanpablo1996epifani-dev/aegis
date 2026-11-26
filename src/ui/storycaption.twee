@@ -1,0 +1,22 @@
+:: StoryCaption {"position":"1100,0","size":"100,100"}
+<div class="aegis-sidebar">
+    <<if $character.archetype>>
+        <div class="ui-navigation">
+            <<link "SKILLS">>
+                <<run setup.openPanel("Character Skills", "UI_Skills")>>
+            <</link>>
+
+            <<link "NOTES">>
+                <<run setup.openPanel("Notes", "UI_Notes")>>
+            <</link>>
+
+            <<link "QUESTS">>
+                <<run setup.openPanel("Quests", "UI_Quests")>>
+            <</link>>
+
+            <<link "EQUIPMENT">>
+                <<run setup.openPanel("Equipment", "UI_Equipment")>>
+            <</link>>
+        </div>
+    <</if>>
+</div>

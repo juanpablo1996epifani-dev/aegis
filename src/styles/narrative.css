@@ -1,0 +1,21 @@
+.narrative-continue {
+    margin: 32px 0;
+    text-align: left;
+}
+
+.narrative-continue a {
+    color: #8abebe;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.narrative-continue a:hover {
+    color: #f0b35a;
+}
+
+.narrative-section {
+    text-align: left;
+    animation: narrative-reveal 0.7s ease-out both;
+}

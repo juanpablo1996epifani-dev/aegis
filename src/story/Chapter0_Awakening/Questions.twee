@@ -1,0 +1,10 @@
+:: Awakening_Questions {"position":"400,400","size":"100,100"}
+<div class="no-br">
+    <<link "Where is this? It feels..." "Awakening_WhereAmI">> <</link>>
+    <<redCheckPrompt "awakening.who_am_i" "Who am I?">>
+    <<redCheckPrompt "awakening.what_am_i" "What am I?">>
+</div>
+
+<div id="awakening-white-slot">
+    <<include "Awakening_WhiteUnlock">>
+</div>

@@ -1,0 +1,43 @@
+.adamant-prompt.link-replace {
+	color: #f0b35a;
+    border-color: #d8a34b;
+    background: #2c261c;
+}
+
+a.link-replace  {
+  color: #f0b35a;
+  text-shadow: 0 0 8px #d8a34b;
+  animation: adamant-pulse 2s ease-in-out infinite;
+}
+
+
+/* Shared styling */
+.discipline-voice {
+    display: flex;
+  	flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border-left: 3px solid;
+    border-radius: 16px;
+}
+
+/* Adamant */
+.adamant, .adamant > a {
+    color: #f0b35a;
+    border-color: #d8a34b;
+    background: #2c261c;
+}
+
+/* Noetarch */
+.noetarch {
+    color: #8acbd5;
+    border-color: #62aab9;
+    background: #1c2b32;
+}
+
+/* Anamnesist */
+.anamnesist {
+    color: #c5a9ec;
+    border-color: #a18acb;
+    background: #292235;
+}

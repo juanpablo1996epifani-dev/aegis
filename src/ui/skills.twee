@@ -1,0 +1,71 @@
+:: UI_Skills [nobr] {"position":"1300,0","size":"100,100"}
+<div class="character-progression">
+
+    <div class="experience-header">
+        <strong>EXPERIENCE</strong>
+
+        <span>
+            <<= $character.exp>> / <<= setup.EXP_THRESHOLD>>
+        </span>
+    </div>
+
+    <div class="experience-track">
+        <div
+            class="experience-fill"
+            @style="'width: ' + ($character.exp / setup.EXP_THRESHOLD * 100) + '%'"
+        ></div>
+    </div>
+
+
+<div class="skill-allocation-summary">
+    <strong>
+        Available Skill Points:
+        <<= setup.getRemainingSkillPoints() || 0>>
+    </strong>
+</div>
+
+
+</div>
+
+
+<div class="d-flex gap-2">
+
+    <<for _dId, _dDefinition range setup.disciplines>>
+
+        <div @class="'ui-discipline ' + _dId">
+
+            <div class="d-flex justify-content-between">
+                <h3 @class="_dId" ><<= _dDefinition.name.toUpperCase()>></h3>
+
+                <strong>
+                    <<= $character.disciplines[_dId].level>>
+                </strong>
+            </div>
+
+            <<for _sId, _sDefinition range _dDefinition.skills>>
+                <<skills _dId _sId>>
+            <</for>>
+
+        </div>
+
+    <</for>>
+<div class="skill-allocation-actions">
+
+    <<if setup.getSkillDraftTotal() > 0>>
+        <<link "RESET">>
+            <<run setup.resetSkillDraft()>>
+            <<replace "#skills-panel-content">>
+                <<include "UI_SkillsBody">>
+            <</replace>>
+        <</link>>
+
+        <<link "CONFIRM">>
+            <<run setup.confirmSkillDraft()>>
+            <<replace "#skills-panel-content">>
+                <<include "UI_SkillsBody">>
+            <</replace>>
+        <</link>>
+    <</if>>
+
+</div>
+</div>

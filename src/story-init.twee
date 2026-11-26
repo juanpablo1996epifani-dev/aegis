@@ -1,0 +1,44 @@
+:: StoryInit {"position":"0,0","size":"100,100"}
+<<set $character = {
+  name: "Unknown",
+  exp: 0,
+  skillPoints: 0,
+
+  disciplines: {
+    adamant: {
+      level: 4,
+      skills: {
+        strength: 0,
+        endurance: 0,
+        chemestry: 0,
+        composure: 0,
+        ferocity: 0
+      }
+    },
+
+    noetarch: {
+      level: 1,
+      skills: {
+        analysis: 0,
+        engineering: 0,
+        rhetoric: 0,
+        reaction: 0,
+        erudition: 0
+      }
+    },
+
+    anamnesist: {
+      level: 1,
+      skills: {
+        resonance: 0,
+        intuition: 0,
+        oneirology: 0,
+        empathy: 0,
+        dissociation: 0
+      }
+    }
+  }
+}>>
+
+
+<<set $checks = {}>>

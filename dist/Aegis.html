@@ -104,260 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://47A74975-23DA-44F7-B709-7F6A627466E5// --><tw-storydata name="Aegis: Last Defense" startnode="1" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="47A74975-23DA-44F7-B709-7F6A627466E5" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* gold color: #f0b35a;
- cyan color: #8abebe;
-*/
-html {
-	color: #8abebe;
-}
-
-h3 {
-	margin: 0;
-  color: #f0b35a;
-}
-
-strong {
-	text-transform: capitalize;
-}
-
-.gap-2 {
-	gap: 8px;
-}
-
-.d-flex {
-	display: flex;
-}
-
-.justify-content-between {
-	justify-content: space-between;
-}
-
-.narrative-continue {
-    margin: 32px 0;
-    text-align: center;
-}
-
-.narrative-continue a {
-    color: #8abebe;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.narrative-continue a:hover {
-    color: #f0b35a;
-}
-
-.narrative-section {
-    text-align: left;
-    animation: narrative-reveal 0.7s ease-out both;
-}
-
-@keyframes narrative-reveal {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.container-class {
-    position: relative;
-    transition: background-color .2s, border-color .2s;
-}
-
-.container-class:hover {
-    border-color: #f0b35a;
-    background-color: #21344a;
-}
-
-.container-class .macro-link {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    position: absolute;
-    inset: 0;
-
-    padding: 16px;
-    box-sizing: border-box;
-
-    color: #f0b35a;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.container-class .macro-link:hover {
-    color: #f0b35a;
-}
-
-.adamant-prompt.link-replace {
-	color: #f0b35a;
-    border-color: #d8a34b;
-    background: #2c261c;
-}
-
-a.link-replace  {
-  color: #f0b35a;
-  text-shadow: 0 0 8px #d8a34b;
-  animation: adamant-pulse 2s ease-in-out infinite;
-}
-
-
-/* Shared styling */
-.discipline-voice {
-    display: flex;
-  	flex-direction: column;
-    gap: 4px;
-    padding: 16px;
-    border-left: 3px solid;
-    border-radius: 16px;
-}
-
-/* Adamant */
-.adamant, .adamant > a {
-    color: #f0b35a;
-    border-color: #d8a34b;
-    background: #2c261c;
-}
-
-/* Noetarch */
-.noetarch {
-    color: #8acbd5;
-    border-color: #62aab9;
-    background: #1c2b32;
-}
-
-/* Anamnesist */
-.anamnesist {
-    color: #c5a9ec;
-    border-color: #a18acb;
-    background: #292235;
-}
-
-
-.passive-result {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #8abebe;
-    cursor: help;
-}
-
-
-.main-menu {
-    max-width: 650px;
-    margin: 12vh auto;
-    text-align: center;
-}
-
-.main-menu h1 {
-    font-size: 3rem;
-    letter-spacing: 0.15em;
-    color: #f0b35a;
-}
-
-.menu-subtitle {
-    color: #8abebe;
-    letter-spacing: 0.25em;
-}
-
-.menu-actions {
-    margin-top: 4rem;
-}
-
-.menu-actions a {
-    display: inline-block;
-    padding: 12px 32px;
-    border: 1px solid #8abebe;
-    color: #f0b35a;
-    text-decoration: none;
-}
-
-.menu-actions a:hover {
-    background: #304861;
-}
-
-.container-class {
-	padding: 12px 32px;
-  border: 1px solid #8abebe;
-}
-
-.no-br > br {
-	display: none
-}
-
-.container-cards {
-	display: flex;
-  	gap: 8px;
-    justify-content: space-between;
-  	text-align: center;
-  color: #8abebe;
-}
-
-/*
-/////////////// CHECKS //////////////////
-*/
-
-
-.white-check-prompt {
-    margin: 12px 0;
-    padding: 14px 18px;
-    background: #24332c;
-    border-left: 3px solid #8fc4a4;
-    border-radius: 10px;
-}
-
-.white-check-prompt .check-prompt-header {
-    color: #8fc4a4;
-}
-
-.white-check-prompt a,
-.white-check-retry a {
-    display: block;
-    color: #b6e3c7;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.white-check-prompt a:hover,
-.white-check-retry a:hover {
-    color: #ffffff;
-}
-
-.white-check-locked {
-    padding: 12px 16px;
-    color: #a8b1ab;
-    background: #202725;
-    border-left: 3px solid #687a70;
-    font-size: .8rem;
-    letter-spacing: .04em;
-}
-
-.white-check-retry {
-    margin-top: 12px;
-    padding: 12px 16px;
-    background: #24332c;
-    border-left: 3px solid #8fc4a4;
-    border-radius: 8px;
-}
-
-
-@keyframes adamant-pulse {
-  0%, 100% {
-    text-shadow: 0 0 4px #d8a34b;
-  }
-  50% {
-    text-shadow: 0 0 18px #f0b35a;
-  }
-}
+	<!-- UUID://47A74975-23DA-44F7-B709-7F6A627466E5// --><tw-storydata name="Aegis: Last Defense" startnode="2" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="47A74975-23DA-44F7-B709-7F6A627466E5" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "checks.css" */
 
 .red-check-prompt {
   	position: relative;
@@ -457,6 +204,267 @@ a.link-replace  {
     color: #e7d8ff;
     line-height: 1.7;
 }
+/* twine-user-stylesheet #2: "container.css" */
+.container-class {
+    position: relative;
+    transition: background-color .2s, border-color .2s;
+}
+
+.container-class:hover {
+    border-color: #f0b35a;
+    background-color: #21344a;
+}
+
+.container-class .macro-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: absolute;
+    inset: 0;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    color: #f0b35a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-class .macro-link:hover {
+    color: #f0b35a;
+}
+/* twine-user-stylesheet #3: "disciplines.css" */
+.adamant-prompt.link-replace {
+	color: #f0b35a;
+    border-color: #d8a34b;
+    background: #2c261c;
+}
+
+a.link-replace  {
+  color: #f0b35a;
+  text-shadow: 0 0 8px #d8a34b;
+  animation: adamant-pulse 2s ease-in-out infinite;
+}
+
+
+/* Shared styling */
+.discipline-voice {
+    display: flex;
+  	flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+    border-left: 3px solid;
+    border-radius: 16px;
+}
+
+/* Adamant */
+.adamant, .adamant > a {
+    color: #f0b35a;
+    border-color: #d8a34b;
+    background: #2c261c;
+}
+
+/* Noetarch */
+.noetarch {
+    color: #8acbd5;
+    border-color: #62aab9;
+    background: #1c2b32;
+}
+
+/* Anamnesist */
+.anamnesist {
+    color: #c5a9ec;
+    border-color: #a18acb;
+    background: #292235;
+}
+/* twine-user-stylesheet #4: "index.css" */
+html {
+	color: #8abebe;
+}
+
+h3 {
+	margin: 0;
+  color: #f0b35a;
+}
+
+strong {
+	text-transform: capitalize;
+}
+
+.no-br > br {
+	display: none
+}
+
+.gap-2 {
+	gap: 8px;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.passive-result {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #8abebe;
+    cursor: help;
+}
+
+.container-class {
+	padding: 12px 32px;
+  border: 1px solid #8abebe;
+}
+
+.container-cards {
+	display: flex;
+  	gap: 8px;
+    justify-content: space-between;
+  	text-align: center;
+  color: #8abebe;
+}
+/* twine-user-stylesheet #5: "keyframes.css" */
+
+@keyframes narrative-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes adamant-pulse {
+  0%, 100% {
+    text-shadow: 0 0 4px #d8a34b;
+  }
+  50% {
+    text-shadow: 0 0 18px #f0b35a;
+  }
+}
+/* twine-user-stylesheet #6: "mainmenu.css" */
+
+.main-menu {
+    max-width: 650px;
+    margin: 12vh auto;
+    text-align: center;
+}
+
+.main-menu h1 {
+    font-size: 3rem;
+    letter-spacing: 0.15em;
+    color: #f0b35a;
+}
+
+.menu-subtitle {
+    color: #8abebe;
+    letter-spacing: 0.25em;
+}
+
+.menu-actions {
+    margin-top: 4rem;
+}
+
+.menu-actions a {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #8abebe;
+    color: #f0b35a;
+    text-decoration: none;
+}
+
+.menu-actions a:hover {
+    background: #304861;
+}
+/* twine-user-stylesheet #7: "narrative.css" */
+.narrative-continue {
+    margin: 32px 0;
+    text-align: left;
+}
+
+.narrative-continue a {
+    color: #8abebe;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.narrative-continue a:hover {
+    color: #f0b35a;
+}
+
+.narrative-section {
+    text-align: left;
+    animation: narrative-reveal 0.7s ease-out both;
+}
+/* twine-user-stylesheet #8: "skills.css" */
+
+/* ///////////////// SKIILS UI ////////////// */
+
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.skill-value {
+    margin-right: auto;
+}
+
+.skill-value small {
+    color: #8fd7b1;
+    font-size: 0.75rem;
+}
+
+.skill-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.skill-allocation-summary {
+    margin-bottom: 20px;
+    color: #f0b35a;
+}
+
+.skill-allocation-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.skill-allocation-actions a {
+    padding: 10px 24px;
+    border: 1px solid #8abebe;
+    border-radius: 6px;
+    color: #8abebe;
+    text-decoration: none;
+}
+
+.skill-allocation-actions a:hover {
+    background: #304861;
+    color: #f0b35a;
+}
+/* twine-user-stylesheet #9: "ui.css" */
 
 /* ///////////////////// 
 		UI CSS 
@@ -591,63 +599,201 @@ a.link-replace  {
     background: #111820;
     color: #e6edf3;
 }
+/* twine-user-stylesheet #10: "whiteChecks.css" */
+/*
+/////////////// CHECKS //////////////////
+*/
 
 
-
-/* ///////////////// SKIILS UI ////////////// */
-
-
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+.white-check-prompt {
+    margin: 12px 0;
+    padding: 14px 18px;
+    background: #24332c;
+    border-left: 3px solid #8fc4a4;
+    border-radius: 10px;
 }
 
-.skill-value {
-    margin-right: auto;
+.white-check-prompt .check-prompt-header {
+    color: #8fc4a4;
 }
 
-.skill-value small {
-    color: #8fd7b1;
-    font-size: 0.75rem;
-}
-
-.skill-header a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border: 1px solid currentColor;
-    border-radius: 5px;
+.white-check-prompt a,
+.white-check-retry a {
+    display: block;
+    color: #b6e3c7;
+    font-weight: 600;
     text-decoration: none;
 }
 
-.skill-allocation-summary {
-    margin-bottom: 20px;
-    color: #f0b35a;
+.white-check-prompt a:hover,
+.white-check-retry a:hover {
+    color: #ffffff;
 }
 
-.skill-allocation-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    margin-top: 24px;
+.white-check-locked {
+    padding: 12px 16px;
+    color: #a8b1ab;
+    background: #202725;
+    border-left: 3px solid #687a70;
+    font-size: .8rem;
+    letter-spacing: .04em;
 }
 
-.skill-allocation-actions a {
-    padding: 10px 24px;
-    border: 1px solid #8abebe;
-    border-radius: 6px;
-    color: #8abebe;
-    text-decoration: none;
-}
+.white-check-retry {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #24332c;
+    border-left: 3px solid #8fc4a4;
+    border-radius: 8px;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "checks.js" */
 
-.skill-allocation-actions a:hover {
-    background: #304861;
-    color: #f0b35a;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "Story JavaScript" */
+setup.activeChecks ??= {};
+
+/* ======================================
+  CHAPTER 0 — AWAKENING 
+   ====================================== */
+
+
+setup.activeChecks["awakening.who_am_i"] = {
+    id: "awakening.who_am_i",
+    type: "RED",
+    discipline: "anamnesist",
+    skill: "intuition",
+    threshold: 10,
+    successPassage: "Awakening_WhoSuccess",
+    failurePassage: "Awakening_WhoFailure"
+};
+
+setup.activeChecks["awakening.what_am_i"] = {
+    id: "awakening.what_am_i",
+    type: "RED",
+    discipline: "noetarch",
+    skill: "erudition",
+    threshold: 10,
+    successPassage: "Awakening.What_Am_I_Success",
+    failurePassage: "Awakening.What_Am_I_Failure"
+};
+
+
+setup.activeChecks["awakening.analyze.find_out_more"] = {
+    id: "awakening.analyze.find_out_more",
+    type: "WHITE",
+    discipline: "noetarch",
+    skill: "analysis",
+    threshold: 12,
+    successPassage: "Awakening_Analyze_Success",
+    failurePassage: "Awakening_Analyze_Failure"
+};
+/* twine-user-script #2: "activeChecks.js" */
+
+/* ======================================
+   ACTIVE CHECKS
+   ====================================== */
+
+
+setup.canRetryWhiteCheck = function (checkId) {
+    const check = setup.activeChecks[checkId];
+    const previous = State.variables.checks?.[checkId];
+
+    if (!check || check.type !== "WHITE") {
+        return false;
+    }
+
+    if (!previous || previous.success) {
+        return false;
+    }
+
+    const discipline =
+        State.variables.character.disciplines[check.discipline];
+
+    const currentSkill = discipline?.skills?.[check.skill];
+
+    return (
+        typeof currentSkill === "number" &&
+        currentSkill > previous.skillAtAttempt
+    );
+};
+
+setup.resolveActiveCheck = function (checkId) {
+    const check = setup.activeChecks[checkId];
+
+    if (!check) {
+        throw new Error(`Unknown check: ${checkId}`);
+    }
+
+    const state = State.variables;
+    const previous = state.checks[checkId];
+
+    // Completed checks and RED checks never reroll.
+    if (previous) {
+        if (check.type === "RED" || previous.success) {
+            return previous;
+        }
+
+        // A failed WHITE check requires a retry unlock.
+        if (!setup.canRetryWhiteCheck(checkId)) {
+            return previous;
+        }
+    }
+
+    const characterDiscipline =
+        state.character.disciplines[check.discipline];
+
+    if (!characterDiscipline) {
+        throw new Error(`Unknown discipline: ${check.discipline}`);
+    }
+
+    const discipline = characterDiscipline.level;
+    const skill = characterDiscipline.skills[check.skill];
+
+    if (typeof discipline !== "number" ||
+        typeof skill !== "number") {
+        throw new Error(`Invalid skill: ${check.skill}`);
+    }
+
+    const dice = [random(1, 6), random(1, 6)];
+
+    const total = dice[0] + dice[1] + discipline + skill;
+
+    const result = {
+        id: checkId,
+        type: check.type,
+        dice,
+        discipline,
+        skill,
+        skillAtAttempt: skill,
+        total,
+        threshold: check.threshold,
+        success: total >= check.threshold,
+        attempts: (previous?.attempts || 0) + 1
+    };
+
+    state.checks[checkId] = result;
+
+    return result;
+};
+/* twine-user-script #3: "characterPresets.js" */
+setup.characterPresets = {
+    adamant: {
+        name: "The Unyielding",
+        adamant: 4,
+        noetarch: 1,
+        anamnesist: 2
+    },
+    noetarch: {
+        name: "The Scholar",
+        adamant: 2,
+        noetarch: 4,
+        anamnesist: 1
+    },
+    anamnesist: {
+        name: "The Seer",
+        adamant: 1,
+        noetarch: 2,
+        anamnesist: 4
+    }
+};
+/* twine-user-script #4: "disciplines.js" */
 setup.disciplines = {
   adamant: {
     id: "adamant",
@@ -736,228 +882,7 @@ setup.disciplines = {
     }
   }
 };
-
-
-setup.characterPresets = {
-    adamant: {
-        name: "The Unyielding",
-        adamant: 4,
-        noetarch: 1,
-        anamnesist: 2
-    },
-    noetarch: {
-        name: "The Scholar",
-        adamant: 2,
-        noetarch: 4,
-        anamnesist: 1
-    },
-    anamnesist: {
-        name: "The Seer",
-        adamant: 1,
-        noetarch: 2,
-        anamnesist: 4
-    }
-};
-
-setup.applyCharacterPreset = function (id) {
-    const preset = setup.characterPresets[id];
-
-    if (!preset) {
-        throw new Error(`Unknown preset: ${id}`);
-    }
-
-    const character = State.variables.character;
-
-    character.archetype = id;
-
-    for (const disciplineId of [
-        "adamant",
-        "noetarch",
-        "anamnesist"
-    ]) {
-        character.disciplines[disciplineId].level =
-            preset[disciplineId];
-    }
-};
-
-/* ROLL SKILLS CHECKS! */
-
-setup.rollSkill = function (disciplineId, skillId, threshold) {
-  const discipline = State.variables.character
-    .disciplines[disciplineId];
-
-  const modifier = discipline.skills[skillId];
-
-  const die1 = Math.floor(Math.random() * 6) + 1;
-  const die2 = Math.floor(Math.random() * 6) + 1;
-
-  const total = die1 + die2 + modifier;
-
-  return {
-    die1,
-    die2,
-    modifier,
-    total,
-    threshold,
-    success: total >= threshold
-  };
-};
-
-
-/* ======================================
-   ACTIVE CHECKS
-   ====================================== */
-
-setup.activeChecks = {};
-
-
-/* ======================================
-  CHAPTER 0 — AWAKENING 
-   ====================================== */
-
-
-setup.activeChecks["awakening.who_am_i"] = {
-    id: "awakening.who_am_i",
-    type: "RED",
-    discipline: "anamnesist",
-    skill: "intuition",
-    threshold: 10,
-    successPassage: "Awakening_WhoSuccess",
-    failurePassage: "Awakening_WhoFailure"
-};
-
-setup.activeChecks["awakening.what_am_i"] = {
-    id: "awakening.what_am_i",
-    type: "RED",
-    discipline: "noetarch",
-    skill: "erudition",
-    threshold: 10,
-    successPassage: "Awakening.What_Am_I_Success",
-    failurePassage: "Awakening.What_Am_I_Failure"
-};
-
-
-setup.activeChecks["awakening.analyze.find_out_more"] = {
-    id: "awakening.analyze.find_out_more",
-    type: "WHITE",
-    discipline: "noetarch",
-    skill: "analysis",
-    threshold: 12,
-    successPassage: "Awakening_Analyze_Success",
-    failurePassage: "Awakening_Analyze_Failure"
-};
-
-
-
-
-
-/* END OF ACTIVE CHECKS */
-
-
-setup.canRetryWhiteCheck = function (checkId) {
-    const check = setup.activeChecks[checkId];
-    const previous = State.variables.checks?.[checkId];
-
-    if (!check || check.type !== "WHITE") {
-        return false;
-    }
-
-    if (!previous || previous.success) {
-        return false;
-    }
-
-    const discipline =
-        State.variables.character.disciplines[check.discipline];
-
-    const currentSkill = discipline?.skills?.[check.skill];
-
-    return (
-        typeof currentSkill === "number" &&
-        currentSkill > previous.skillAtAttempt
-    );
-};
-
-setup.resolveActiveCheck = function (checkId) {
-    const check = setup.activeChecks[checkId];
-
-    if (!check) {
-        throw new Error(`Unknown check: ${checkId}`);
-    }
-
-    const state = State.variables;
-    const previous = state.checks[checkId];
-
-    // Completed checks and RED checks never reroll.
-    if (previous) {
-        if (check.type === "RED" || previous.success) {
-            return previous;
-        }
-
-        // A failed WHITE check requires a retry unlock.
-        if (!setup.canRetryWhiteCheck(checkId)) {
-            return previous;
-        }
-    }
-
-    const characterDiscipline =
-        state.character.disciplines[check.discipline];
-
-    if (!characterDiscipline) {
-        throw new Error(`Unknown discipline: ${check.discipline}`);
-    }
-
-    const discipline = characterDiscipline.level;
-    const skill = characterDiscipline.skills[check.skill];
-
-    if (typeof discipline !== "number" ||
-        typeof skill !== "number") {
-        throw new Error(`Invalid skill: ${check.skill}`);
-    }
-
-    const dice = [random(1, 6), random(1, 6)];
-
-    const total = dice[0] + dice[1] + discipline + skill;
-
-    const result = {
-        id: checkId,
-        type: check.type,
-        dice,
-        discipline,
-        skill,
-        skillAtAttempt: skill,
-        total,
-        threshold: check.threshold,
-        success: total >= check.threshold,
-        attempts: (previous?.attempts || 0) + 1
-    };
-
-    state.checks[checkId] = result;
-
-    return result;
-};
-
-
-
-/* UI */
-
-
-setup.openPanel = function (title, passageName) {
-    if (!Story.has(passageName)) {
-        console.error("UI passage not found:", passageName);
-        return;
-    }
-
-    if (passageName === "UI_Skills") {
-        setup.resetSkillDraft();
-    }
-
-    Dialog
-        .create(title, "aegis-panel")
-        .wikiPassage(passageName)
-        .open();
-};
-
-
+/* twine-user-script #5: "experienceProgression.js" */
 /* ======================================
    EXPERIENCE AND PROGRESSION
    ====================================== */
@@ -1012,7 +937,49 @@ setup.upgradeSkill = function (disciplineId, skillId) {
 
     return true;
 };
+/* twine-user-script #6: "rollSkillAndPreset.js" */
+setup.applyCharacterPreset = function (id) {
+    const preset = setup.characterPresets[id];
 
+    if (!preset) {
+        throw new Error(`Unknown preset: ${id}`);
+    }
+
+    const character = State.variables.character;
+
+    character.archetype = id;
+
+    for (const disciplineId of [
+        "adamant",
+        "noetarch",
+        "anamnesist"
+    ]) {
+        character.disciplines[disciplineId].level =
+            preset[disciplineId];
+    }
+};
+
+setup.rollSkill = function (disciplineId, skillId, threshold) {
+  const discipline = State.variables.character
+    .disciplines[disciplineId];
+
+  const modifier = discipline.skills[skillId];
+
+  const die1 = Math.floor(Math.random() * 6) + 1;
+  const die2 = Math.floor(Math.random() * 6) + 1;
+
+  const total = die1 + die2 + modifier;
+
+  return {
+    die1,
+    die2,
+    modifier,
+    total,
+    threshold,
+    success: total >= threshold
+  };
+};
+/* twine-user-script #7: "skillAllocation.js" */
 
 /* ======================================
    SKILL ALLOCATION
@@ -1114,15 +1081,282 @@ setup.confirmSkillDraft = function () {
 
     return true;
 };
-/* twine-user-script #2: "game.js" */
-</script><tw-tag name="nobr" color="yellow"></tw-tag><tw-tag name="widget" color="purple"></tw-tag><tw-passagedata pid="1" name="MainMenu" tags="" position="100,200" size="100,100">&lt;div class=&quot;main-menu&quot;&gt;
+/* twine-user-script #8: "ui.js" */
+setup.openPanel = function (title, passageName) {
+    if (!Story.has(passageName)) {
+        console.error("UI passage not found:", passageName);
+        return;
+    }
+
+    if (passageName === "UI_Skills") {
+        setup.resetSkillDraft();
+    }
+
+    Dialog
+        .create(title, "aegis-panel")
+        .wikiPassage(passageName)
+        .open();
+};</script><tw-tag name="widget" color="purple"></tw-tag><tw-tag name="nobr" color="yellow"></tw-tag><tw-passagedata pid="1" name="Awakening_WhiteUnlock" tags="nobr" position="1000,400" size="100,100">&lt;&lt;if $checks[&quot;awakening.who_am_i&quot;] &amp;&amp;
+      $checks[&quot;awakening.what_am_i&quot;]&gt;&gt;
+
+    &lt;&lt;whiteCheckPrompt
+        &quot;awakening.analyze.find_out_more&quot;
+        &quot;Examine what you have learned.&quot;
+    &gt;&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="MainMenu" tags="" position="100,200" size="100,100">&lt;div class=&quot;main-menu&quot;&gt;
     &lt;h1&gt;AEGIS&lt;/h1&gt;
     &lt;p class=&quot;menu-subtitle&quot;&gt;LAST DEFENSE&lt;/p&gt;
 
     &lt;div class=&quot;menu-actions&quot;&gt;
         [[NEW GAME-&gt;CharacterCreation]]
     &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="DisciplineWidgets" tags="widget nobr" position="200,0" size="100,100">&lt;&lt;widget &quot;disciplinePrompt&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Awakening_ARebirth" tags="" position="402,402" size="100,100">There is no hope for redemtion here, your limb although numb are still too large to belong to small vessel, there is also no cord of life attached to your belly.
+
+Your awakening approaches, but it is not a true beginning... you are too ruined for that.
+
+&lt;&lt;disciplinePrompt &quot;anamnesist&quot; &quot;dissociation&quot; 6 &quot;Do not listen to the disembodied voice of the ether. I can tell you, ancient one, this &quot;IS&quot; a Rebirth. We are achieving a great change. The world outside has abandoned you - but you won&#39;t leave yet!&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="AwakeningAdamantRes_0" tags="" position="600,200" size="100,100">&lt;&lt;discipline  
+	&quot;adamant&quot;
+    &quot;endurance&quot;
+&quot;Of course you have. You are your worst enemy, &#39;our&#39; worst enemy. But thats not important right now. I am just a body, I hold no grudges.&quot;
+&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Awakening_Analyze_Success" tags="" position="1100,300" size="100,100">The fragments arrange themselves into something resembling a memory.
+
+You begin to understand that your awakening was not an accident.</tw-passagedata><tw-passagedata pid="6" name="Awakening_Analyze_Failure" tags="" position="1100,500" size="100,100">You attempt to assemble the scattered fragments of memory.
+
+Nothing fits. You lack the clarity to make sense of what remains.</tw-passagedata><tw-passagedata pid="7" name="Awakening_Body" tags="" position="300,400" size="100,100">Something stirs beyond the dark. An unfamiliar weight. The distant ache of flesh. Fingers, perhaps. A hand.
+
+A heartbeat drums against the silence, indifferent to your arrival. Lungs draw breath without instruction. The machinery of life has carried on in your absence.</tw-passagedata><tw-passagedata pid="8" name="Awakening_Questions" tags="" position="400,400" size="100,100">&lt;div class=&quot;no-br&quot;&gt;
+    &lt;&lt;link &quot;Where is this? It feels...&quot; &quot;Awakening_WhereAmI&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
+    &lt;&lt;redCheckPrompt &quot;awakening.who_am_i&quot; &quot;Who am I?&quot;&gt;&gt;
+    &lt;&lt;redCheckPrompt &quot;awakening.what_am_i&quot; &quot;What am I?&quot;&gt;&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;awakening-white-slot&quot;&gt;
+    &lt;&lt;include &quot;Awakening_WhiteUnlock&quot;&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="Awakening.What_Am_I_Failure" tags="" position="800,600" size="100,100">We can feel your limbs, all of them numb. Whatever you were before has long since perished. Now you are nothing more than a cadaver refusing its journey to the morgue. 
+
+Even now we challenge our natural destination.</tw-passagedata><tw-passagedata pid="10" name="Awakening.What_Am_I_Success" tags="" position="800,500" size="100,100">Some kind of leader? A handful of souls depend on your choices. Or so it was before. Whether you will ever rebecome it depends on you.</tw-passagedata><tw-passagedata pid="11" name="Awakening_WhereAmI" tags="" position="401,401" size="100,100">It doesn&#39;t feel like much. Dark, ancient. A part of what &quot;was&quot; merged completely with this absence. It has been drawn to its event horizon, becoming part of its lack of qualities.
+
+What exactly could this remind you of?
+
+&lt;&lt;link &quot;It feels like womb, a rebirth...&quot; &quot;Awakening_ARebirth&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Awakening_Questions&quot; &quot;No, you are right. This is &#39;Death&#39;...&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Awakening_Questions&quot; &quot;Nevermind, just pull me back...&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Awakening_WhoFailure" tags="" position="800,200" size="100,100">&lt;&lt;run setup.addExperiencePoints(125)&gt;&gt;The &quot;truth&quot; about your identity is missing. 
+
+We found you here, floating on the inky blackness..., crumbling. Left to die. 
+
+I can tell you who you are not: you are not someone loved.</tw-passagedata><tw-passagedata pid="13" name="Awakening_WhoSuccess" tags="" position="800,300" size="100,100">&lt;&lt;run setup.addExperiencePoints(125)&gt;&gt;Across the darkness, a small crack of this shell-like world glances back at you. A spark of truth shines into the depths
+
+You &quot;were&quot; change, the promise of tomorrow, a new dawn. It is gone now, you are whatever you wish to be...</tw-passagedata><tw-passagedata pid="14" name="Chapter01_Introduction" tags="" position="300,200" size="200,200">&lt;h2&gt;The Awakening&lt;/h2&gt;
+An inky blackness stretches beyond all measure. Boundless. Edgeless. No earth beneath you. No heavens above. Not even the mercy of a grave.
+
+Here, there is no weight to carry. No ache of flesh. No name to answer to.
+
+Yet there is an insistence. Faint, almost imperceptible. Something that ought to have a name. A face. A place among the living.
+
+&lt;div class=&quot;no-br&quot; &gt;
+
+&lt;&lt;disciplinePrompt
+    &quot;adamant&quot;
+    &quot;endurance&quot;
+    9
+    &quot;You are not gone. Not yet. But you brought us very close to the end.&quot;
+    false
+    &quot;&quot;
+    &quot;AwakeningAdamantRes_0&quot;
+    &quot;I have done this to myself?&quot;
+&gt;&gt;
+
+
+&lt;&lt;disciplinePrompt &quot;noetarch&quot; &quot;analysis&quot; 9 &quot;You are reawakening. If we must draw a conclusion, we are lying on a mattress. Or fermenting inside a coffin. We have no more evidence to favor one over the other.&quot;&gt;&gt;
+
+&lt;&lt;disciplinePrompt &quot;anamnesist&quot; &quot;oneirology&quot; 9 &quot;A starless night sky. It is no ill omen, but we are astray. Elder one. You have given form to its absence...&quot;&gt;&gt;
+&lt;/div&gt;
+A thoughtless impulse draws you towards it.
+&lt;&lt;revealNext &quot;Awakening_Body&quot; &quot;CONTINUE&quot; &quot;Awakening_Questions&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="CharacterCreation" tags="" position="100,400" size="100,100">&lt;h2&gt;CHARACTER CREATION&lt;/h2&gt;
+&lt;p&gt;Three voices inhabit the mind. Some speak louder than others.&lt;/p&gt;
+&lt;div class=&quot;container-cards no-br&quot;&gt;
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE UNYIELDING&lt;/h3&gt;
+        &lt;p&gt;Adamant 4 / Noetarch 1 / Anamnesist 2&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Unyielding&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;adamant&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE SCHOLAR&lt;/h3&gt;
+        &lt;p&gt;Adamant 2 / Noetarch 4 / Anamnesist 1&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Scholar&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;noetarch&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;container-class&quot;&gt;
+        &lt;h3&gt;THE SEER&lt;/h3&gt;
+        &lt;p&gt;Adamant 1 / Noetarch 2 / Anamnesist 4&lt;/p&gt;
+
+        &lt;&lt;link &quot;Choose the Seer&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
+            &lt;&lt;run setup.applyCharacterPreset(&quot;anamnesist&quot;)&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+[[Return to Main Menu-&gt;MainMenu]]</tw-passagedata><tw-passagedata pid="16" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;set $character = {
+  name: &quot;Unknown&quot;,
+  exp: 0,
+  skillPoints: 0,
+
+  disciplines: {
+    adamant: {
+      level: 4,
+      skills: {
+        strength: 0,
+        endurance: 0,
+        chemestry: 0,
+        composure: 0,
+        ferocity: 0
+      }
+    },
+
+    noetarch: {
+      level: 1,
+      skills: {
+        analysis: 0,
+        engineering: 0,
+        rhetoric: 0,
+        reaction: 0,
+        erudition: 0
+      }
+    },
+
+    anamnesist: {
+      level: 1,
+      skills: {
+        resonance: 0,
+        intuition: 0,
+        oneirology: 0,
+        empathy: 0,
+        dissociation: 0
+      }
+    }
+  }
+}&gt;&gt;
+
+
+&lt;&lt;set $checks = {}&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="UI_Equipment" tags="" position="1600,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
+&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="18" name="UI_Notes" tags="" position="1400,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
+&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="19" name="UI_Quests" tags="" position="1500,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
+&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="20" name="UI_Skills" tags="nobr" position="1300,0" size="100,100">&lt;div class=&quot;character-progression&quot;&gt;
+
+    &lt;div class=&quot;experience-header&quot;&gt;
+        &lt;strong&gt;EXPERIENCE&lt;/strong&gt;
+
+        &lt;span&gt;
+            &lt;&lt;= $character.exp&gt;&gt; / &lt;&lt;= setup.EXP_THRESHOLD&gt;&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;experience-track&quot;&gt;
+        &lt;div
+            class=&quot;experience-fill&quot;
+            @style=&quot;&#39;width: &#39; + ($character.exp / setup.EXP_THRESHOLD * 100) + &#39;%&#39;&quot;
+        &gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+
+&lt;div class=&quot;skill-allocation-summary&quot;&gt;
+    &lt;strong&gt;
+        Available Skill Points:
+        &lt;&lt;= setup.getRemainingSkillPoints() || 0&gt;&gt;
+    &lt;/strong&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+
+
+&lt;div class=&quot;d-flex gap-2&quot;&gt;
+
+    &lt;&lt;for _dId, _dDefinition range setup.disciplines&gt;&gt;
+
+        &lt;div @class=&quot;&#39;ui-discipline &#39; + _dId&quot;&gt;
+
+            &lt;div class=&quot;d-flex justify-content-between&quot;&gt;
+                &lt;h3 @class=&quot;_dId&quot; &gt;&lt;&lt;= _dDefinition.name.toUpperCase()&gt;&gt;&lt;/h3&gt;
+
+                &lt;strong&gt;
+                    &lt;&lt;= $character.disciplines[_dId].level&gt;&gt;
+                &lt;/strong&gt;
+            &lt;/div&gt;
+
+            &lt;&lt;for _sId, _sDefinition range _dDefinition.skills&gt;&gt;
+                &lt;&lt;skills _dId _sId&gt;&gt;
+            &lt;&lt;/for&gt;&gt;
+
+        &lt;/div&gt;
+
+    &lt;&lt;/for&gt;&gt;
+&lt;div class=&quot;skill-allocation-actions&quot;&gt;
+
+    &lt;&lt;if setup.getSkillDraftTotal() &gt; 0&gt;&gt;
+        &lt;&lt;link &quot;RESET&quot;&gt;&gt;
+            &lt;&lt;run setup.resetSkillDraft()&gt;&gt;
+            &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
+                &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
+            &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+
+        &lt;&lt;link &quot;CONFIRM&quot;&gt;&gt;
+            &lt;&lt;run setup.confirmSkillDraft()&gt;&gt;
+            &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
+                &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
+            &lt;&lt;/replace&gt;&gt;
+        &lt;&lt;/link&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="21" name="StoryCaption" tags="" position="1100,0" size="100,100">&lt;div class=&quot;aegis-sidebar&quot;&gt;
+    &lt;&lt;if $character.archetype&gt;&gt;
+        &lt;div class=&quot;ui-navigation&quot;&gt;
+            &lt;&lt;link &quot;SKILLS&quot;&gt;&gt;
+                &lt;&lt;run setup.openPanel(&quot;Character Skills&quot;, &quot;UI_Skills&quot;)&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;link &quot;NOTES&quot;&gt;&gt;
+                &lt;&lt;run setup.openPanel(&quot;Notes&quot;, &quot;UI_Notes&quot;)&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;link &quot;QUESTS&quot;&gt;&gt;
+                &lt;&lt;run setup.openPanel(&quot;Quests&quot;, &quot;UI_Quests&quot;)&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+
+            &lt;&lt;link &quot;EQUIPMENT&quot;&gt;&gt;
+                &lt;&lt;run setup.openPanel(&quot;Equipment&quot;, &quot;UI_Equipment&quot;)&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+        &lt;/div&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="ContinueWidget" tags="widget nobr" position="300,0" size="100,100">&lt;&lt;widget &quot;revealNext&quot;&gt;&gt;
+    &lt;&lt;set _includeId = _args[0]&gt;&gt;
+    &lt;&lt;set _label = _args[1] || &quot;CONTINUE&quot; &gt;&gt;
+    &lt;&lt;set _nextInclude = _args.length &gt; 2 ? _args[2] : null&gt;&gt;
+
+    &lt;&lt;capture _includeId _label _nextInclude&gt;&gt;
+        &lt;div class=&quot;narrative-continue&quot;&gt;
+            &lt;&lt;linkreplace _label&gt;&gt;
+                &lt;div class=&quot;narrative-section&quot;&gt;
+                    &lt;&lt;include _includeId&gt;&gt;
+                &lt;/div&gt;
+
+                &lt;&lt;if _nextInclude&gt;&gt;
+                    &lt;&lt;revealNext _nextInclude&gt;&gt;
+                &lt;&lt;/if&gt;&gt;
+            &lt;&lt;/linkreplace&gt;&gt;
+        &lt;/div&gt;
+    &lt;&lt;/capture&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="DisciplineWidgets" tags="widget nobr" position="200,0" size="100,100">&lt;&lt;widget &quot;disciplinePrompt&quot;&gt;&gt;
     &lt;&lt;set _disciplineId = _args[0]&gt;&gt;
     &lt;&lt;set _skillId = _args[1]&gt;&gt;
     &lt;&lt;set _threshold = _args[2]&gt;&gt;
@@ -1178,187 +1412,7 @@ setup.confirmSkillDraft = function () {
 
 &lt;&lt;widget &quot;discipline&quot;&gt;&gt;
     &lt;div @class=&quot;&#39;discipline-voice &#39; + _args[0]&quot;&gt;&lt;strong class=&quot;discipline-name&quot;&gt;&lt;&lt;= _args[1]&gt;&gt;: &lt;&lt;if _args[3] &amp;&amp; _args[4] &gt;&gt; &lt;&lt;status _args[3] _args[4] &gt;&gt; &lt;&lt;/if&gt;&gt; &lt;/strong&gt; &lt;span class=&quot;discipline-text&quot;&gt; &lt;&lt;= _args[2]&gt;&gt;&lt;/span&gt;&lt;/div&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;set $character = {
-  name: &quot;Unknown&quot;,
-  exp: 0,
-  skillPoints: 0,
-
-  disciplines: {
-    adamant: {
-      level: 4,
-      skills: {
-        strength: 0,
-        endurance: 0,
-        chemestry: 0,
-        composure: 0,
-        ferocity: 0
-      }
-    },
-
-    noetarch: {
-      level: 1,
-      skills: {
-        analysis: 0,
-        engineering: 0,
-        rhetoric: 0,
-        reaction: 0,
-        erudition: 0
-      }
-    },
-
-    anamnesist: {
-      level: 1,
-      skills: {
-        resonance: 0,
-        intuition: 0,
-        oneirology: 0,
-        empathy: 0,
-        dissociation: 0
-      }
-    }
-  }
-}&gt;&gt;
-
-
-&lt;&lt;set $checks = {}&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="CharacterCreation" tags="" position="100,400" size="100,100">&lt;h2&gt;CHARACTER CREATION&lt;/h2&gt;
-&lt;p&gt;Three voices inhabit the mind. Some speak louder than others.&lt;/p&gt;
-&lt;div class=&quot;container-cards no-br&quot;&gt;
-    &lt;div class=&quot;container-class&quot;&gt;
-        &lt;h3&gt;THE UNYIELDING&lt;/h3&gt;
-        &lt;p&gt;Adamant 4 / Noetarch 1 / Anamnesist 2&lt;/p&gt;
-
-        &lt;&lt;link &quot;Choose the Unyielding&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
-            &lt;&lt;run setup.applyCharacterPreset(&quot;adamant&quot;)&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;container-class&quot;&gt;
-        &lt;h3&gt;THE SCHOLAR&lt;/h3&gt;
-        &lt;p&gt;Adamant 2 / Noetarch 4 / Anamnesist 1&lt;/p&gt;
-
-        &lt;&lt;link &quot;Choose the Scholar&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
-            &lt;&lt;run setup.applyCharacterPreset(&quot;noetarch&quot;)&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;container-class&quot;&gt;
-        &lt;h3&gt;THE SEER&lt;/h3&gt;
-        &lt;p&gt;Adamant 1 / Noetarch 2 / Anamnesist 4&lt;/p&gt;
-
-        &lt;&lt;link &quot;Choose the Seer&quot; &quot;Chapter01_Introduction&quot;&gt;&gt;
-            &lt;&lt;run setup.applyCharacterPreset(&quot;anamnesist&quot;)&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-[[Return to Main Menu-&gt;MainMenu]]</tw-passagedata><tw-passagedata pid="5" name="Chapter01_Introduction" tags="" position="300,200" size="200,200">&lt;h2&gt;The Awakening&lt;/h2&gt;
-An inky blackness stretches beyond all measure. Boundless. Edgeless. No earth beneath you. No heavens above. Not even the mercy of a grave.
-
-Here, there is no weight to carry. No ache of flesh. No name to answer to.
-
-Yet there is an insistence. Faint, almost imperceptible. Something that ought to have a name. A face. A place among the living.
-
-&lt;div class=&quot;no-br&quot; &gt;
-
-&lt;&lt;disciplinePrompt
-    &quot;adamant&quot;
-    &quot;endurance&quot;
-    9
-    &quot;You are not gone. Not yet. But you brought us very close to the end.&quot;
-    false
-    &quot;&quot;
-    &quot;AwakeningAdamantRes_0&quot;
-    &quot;I have done this to myself?&quot;
-&gt;&gt;
-
-
-&lt;&lt;disciplinePrompt &quot;noetarch&quot; &quot;analysis&quot; 9 &quot;You are reawakening. If we must draw a conclusion, we are lying on a mattress. Or fermenting inside a coffin. We have no more evidence to favor one over the other.&quot;&gt;&gt;
-
-&lt;&lt;disciplinePrompt &quot;anamnesist&quot; &quot;oneirology&quot; 9 &quot;A starless night sky. It is no ill omen, but we are astray. Elder one. You have given form to its absence...&quot;&gt;&gt;
-&lt;/div&gt;
-A thoughtless impulse draws you towards it.
-&lt;&lt;revealNext &quot;Awakening_Body&quot; &quot;CONTINUE&quot; &quot;Awakening_Questions&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Awakening_WhoSuccess" tags="" position="800,300" size="100,100">&lt;&lt;run setup.addExperiencePoints(125)&gt;&gt;Across the darkness, a small crack of this shell-like world glances back at you. A spark of truth shines into the depths
-
-You &quot;were&quot; change, the promise of tomorrow, a new dawn. It is gone now, you are whatever you wish to be...</tw-passagedata><tw-passagedata pid="7" name="Awakening_WhoFailure" tags="" position="800,200" size="100,100">&lt;&lt;run setup.addExperiencePoints(125)&gt;&gt;The &quot;truth&quot; about your identity is missing. 
-
-We found you here, floating on the inky blackness..., crumbling. Left to die. 
-
-I can tell you who you are not: you are not someone loved.</tw-passagedata><tw-passagedata pid="8" name="Awakening_Questions" tags="" position="400,400" size="100,100">&lt;div class=&quot;no-br&quot;&gt;
-    &lt;&lt;redCheckPrompt &quot;awakening.who_am_i&quot; &quot;Who am I?&quot;&gt;&gt;
-    &lt;&lt;redCheckPrompt &quot;awakening.what_am_i&quot; &quot;What am I?&quot;&gt;&gt;
-&lt;/div&gt;
-
-&lt;div id=&quot;awakening-white-slot&quot;&gt;
-    &lt;&lt;include &quot;Awakening_WhiteUnlock&quot;&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="Awakening_Body" tags="" position="300,400" size="100,100">Something stirs beyond the dark. An unfamiliar weight. The distant ache of flesh. Fingers, perhaps. A hand.
-
-A heartbeat drums against the silence, indifferent to your arrival. Lungs draw breath without instruction. The machinery of life has carried on in your absence.</tw-passagedata><tw-passagedata pid="10" name="ContinueWidget" tags="widget nobr" position="300,0" size="100,100">&lt;&lt;widget &quot;skills&quot;&gt;&gt;
-    &lt;&lt;set _disciplineId = _args[0]&gt;&gt;
-    &lt;&lt;set _skillId = _args[1]&gt;&gt;
-
-    &lt;&lt;set _skill = setup.disciplines[_disciplineId].skills[_skillId]&gt;&gt;
-    &lt;&lt;set _value = $character.disciplines[_disciplineId].skills[_skillId]&gt;&gt;
-    &lt;&lt;set _pending = setup.getSkillDraft(_disciplineId, _skillId)&gt;&gt;
-
-    &lt;div class=&quot;ui-skill&quot;&gt;
-        &lt;div class=&quot;skill-header&quot;&gt;
-            &lt;strong&gt;&lt;&lt;= _skill.name&gt;&gt;:&lt;/strong&gt;
-
-            &lt;span class=&quot;skill-value&quot;&gt;
-                &lt;&lt;= _value + _pending&gt;&gt;
-                &lt;&lt;if _pending &gt; 0&gt;&gt;
-                    &lt;small&gt;(+&lt;&lt;= _pending&gt;&gt; pending)&lt;/small&gt;
-                &lt;&lt;/if&gt;&gt;
-            &lt;/span&gt;
-
-            &lt;&lt;capture _disciplineId _skillId&gt;&gt;
-                &lt;&lt;if setup.getSkillDraft(_disciplineId, _skillId) &gt; 0&gt;&gt;
-                    &lt;&lt;link &quot;−&quot;&gt;&gt;
-                        &lt;&lt;run setup.stageSkillUpgrade(_disciplineId, _skillId, -1)&gt;&gt;
-                        &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
-                            &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
-                        &lt;&lt;/replace&gt;&gt;
-                    &lt;&lt;/link&gt;&gt;
-                &lt;&lt;/if&gt;&gt;
-
-                &lt;&lt;if setup.getRemainingSkillPoints() &gt; 0&gt;&gt;
-                    &lt;&lt;link &quot;+&quot;&gt;&gt;
-                        &lt;&lt;run setup.stageSkillUpgrade(_disciplineId, _skillId, 1)&gt;&gt;
-                        &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
-                            &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
-                        &lt;&lt;/replace&gt;&gt;
-                    &lt;&lt;/link&gt;&gt;
-                &lt;&lt;/if&gt;&gt;
-            &lt;&lt;/capture&gt;&gt;
-        &lt;/div&gt;
-
-        &lt;p class=&quot;skill-description&quot;&gt;
-            &lt;&lt;= _skill.description&gt;&gt;
-        &lt;/p&gt;
-    &lt;/div&gt;
-&lt;&lt;/widget&gt;&gt;
-
-
-
-&lt;&lt;widget &quot;revealNext&quot;&gt;&gt;
-    &lt;&lt;set _includeId = _args[0]&gt;&gt;
-    &lt;&lt;set _label = _args[1] || &quot;CONTINUE&quot; &gt;&gt;
-    &lt;&lt;set _nextInclude = _args.length &gt; 2 ? _args[2] : null&gt;&gt;
-
-    &lt;&lt;capture _includeId _label _nextInclude&gt;&gt;
-        &lt;div class=&quot;narrative-continue&quot;&gt;
-            &lt;&lt;linkreplace _label&gt;&gt;
-                &lt;div class=&quot;narrative-section&quot;&gt;
-                    &lt;&lt;include _includeId&gt;&gt;
-                &lt;/div&gt;
-
-                &lt;&lt;if _nextInclude&gt;&gt;
-                    &lt;&lt;revealNext _nextInclude&gt;&gt;
-                &lt;&lt;/if&gt;&gt;
-            &lt;&lt;/linkreplace&gt;&gt;
-        &lt;/div&gt;
-    &lt;&lt;/capture&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="RedChecks" tags="widget nobr" position="400,0" size="100,100">&lt;&lt;widget &quot;redCheckPrompt&quot;&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="RedChecks" tags="widget nobr" position="400,0" size="100,100">&lt;&lt;widget &quot;redCheckPrompt&quot;&gt;&gt;
     &lt;&lt;set _checkId = _args[0]&gt;&gt;
     &lt;&lt;set _label = _args[1]&gt;&gt;
     &lt;&lt;set _check = setup.activeChecks[_checkId]&gt;&gt;
@@ -1432,117 +1486,51 @@ A heartbeat drums against the silence, indifferent to your arrival. Lungs draw b
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;&lt;/if&gt;&gt;
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="AwakeningAdamantRes_0" tags="" position="600,200" size="100,100">&lt;&lt;discipline  
-	&quot;adamant&quot;
-    &quot;endurance&quot;
-&quot;Of course you have. You are your worst enemy, &#39;our&#39; worst enemy. But thats not important right now. I am just a body, I hold no grudges.&quot;
-&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="StoryCaption" tags="" position="1100,0" size="100,100">&lt;div class=&quot;aegis-sidebar&quot;&gt;
-    &lt;&lt;if $character.archetype&gt;&gt;
-        &lt;div class=&quot;ui-navigation&quot;&gt;
-            &lt;&lt;link &quot;SKILLS&quot;&gt;&gt;
-                &lt;&lt;run setup.openPanel(&quot;Character Skills&quot;, &quot;UI_Skills&quot;)&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SkillsWidget" tags="widget nobr" position="300,0" size="100,100">&lt;&lt;widget &quot;skills&quot;&gt;&gt;
+    &lt;&lt;set _disciplineId = _args[0]&gt;&gt;
+    &lt;&lt;set _skillId = _args[1]&gt;&gt;
 
-            &lt;&lt;link &quot;NOTES&quot;&gt;&gt;
-                &lt;&lt;run setup.openPanel(&quot;Notes&quot;, &quot;UI_Notes&quot;)&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
+    &lt;&lt;set _skill = setup.disciplines[_disciplineId].skills[_skillId]&gt;&gt;
+    &lt;&lt;set _value = $character.disciplines[_disciplineId].skills[_skillId]&gt;&gt;
+    &lt;&lt;set _pending = setup.getSkillDraft(_disciplineId, _skillId)&gt;&gt;
 
-            &lt;&lt;link &quot;QUESTS&quot;&gt;&gt;
-                &lt;&lt;run setup.openPanel(&quot;Quests&quot;, &quot;UI_Quests&quot;)&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
+    &lt;div class=&quot;ui-skill&quot;&gt;
+        &lt;div class=&quot;skill-header&quot;&gt;
+            &lt;strong&gt;&lt;&lt;= _skill.name&gt;&gt;:&lt;/strong&gt;
 
-            &lt;&lt;link &quot;EQUIPMENT&quot;&gt;&gt;
-                &lt;&lt;run setup.openPanel(&quot;Equipment&quot;, &quot;UI_Equipment&quot;)&gt;&gt;
-            &lt;&lt;/link&gt;&gt;
-        &lt;/div&gt;
-    &lt;&lt;/if&gt;&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="UI_Skills" tags="nobr" position="1300,0" size="100,100">&lt;div class=&quot;character-progression&quot;&gt;
+            &lt;span class=&quot;skill-value&quot;&gt;
+                &lt;&lt;= _value + _pending&gt;&gt;
+                &lt;&lt;if _pending &gt; 0&gt;&gt;
+                    &lt;small&gt;(+&lt;&lt;= _pending&gt;&gt; pending)&lt;/small&gt;
+                &lt;&lt;/if&gt;&gt;
+            &lt;/span&gt;
 
-    &lt;div class=&quot;experience-header&quot;&gt;
-        &lt;strong&gt;EXPERIENCE&lt;/strong&gt;
+            &lt;&lt;capture _disciplineId _skillId&gt;&gt;
+                &lt;&lt;if setup.getSkillDraft(_disciplineId, _skillId) &gt; 0&gt;&gt;
+                    &lt;&lt;link &quot;−&quot;&gt;&gt;
+                        &lt;&lt;run setup.stageSkillUpgrade(_disciplineId, _skillId, -1)&gt;&gt;
+                        &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
+                            &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
+                        &lt;&lt;/replace&gt;&gt;
+                    &lt;&lt;/link&gt;&gt;
+                &lt;&lt;/if&gt;&gt;
 
-        &lt;span&gt;
-            &lt;&lt;= $character.exp&gt;&gt; / &lt;&lt;= setup.EXP_THRESHOLD&gt;&gt;
-        &lt;/span&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;experience-track&quot;&gt;
-        &lt;div
-            class=&quot;experience-fill&quot;
-            @style=&quot;&#39;width: &#39; + ($character.exp / setup.EXP_THRESHOLD * 100) + &#39;%&#39;&quot;
-        &gt;&lt;/div&gt;
-    &lt;/div&gt;
-
-
-&lt;div class=&quot;skill-allocation-summary&quot;&gt;
-    &lt;strong&gt;
-        Available Skill Points:
-        &lt;&lt;= setup.getRemainingSkillPoints() || 0&gt;&gt;
-    &lt;/strong&gt;
-&lt;/div&gt;
-
-
-&lt;/div&gt;
-
-
-&lt;div class=&quot;d-flex gap-2&quot;&gt;
-
-    &lt;&lt;for _dId, _dDefinition range setup.disciplines&gt;&gt;
-
-        &lt;div @class=&quot;&#39;ui-discipline &#39; + _dId&quot;&gt;
-
-            &lt;div class=&quot;d-flex justify-content-between&quot;&gt;
-                &lt;h3 @class=&quot;_dId&quot; &gt;&lt;&lt;= _dDefinition.name.toUpperCase()&gt;&gt;&lt;/h3&gt;
-
-                &lt;strong&gt;
-                    &lt;&lt;= $character.disciplines[_dId].level&gt;&gt;
-                &lt;/strong&gt;
-            &lt;/div&gt;
-
-            &lt;&lt;for _sId, _sDefinition range _dDefinition.skills&gt;&gt;
-                &lt;&lt;skills _dId _sId&gt;&gt;
-            &lt;&lt;/for&gt;&gt;
-
+                &lt;&lt;if setup.getRemainingSkillPoints() &gt; 0&gt;&gt;
+                    &lt;&lt;link &quot;+&quot;&gt;&gt;
+                        &lt;&lt;run setup.stageSkillUpgrade(_disciplineId, _skillId, 1)&gt;&gt;
+                        &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
+                            &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
+                        &lt;&lt;/replace&gt;&gt;
+                    &lt;&lt;/link&gt;&gt;
+                &lt;&lt;/if&gt;&gt;
+            &lt;&lt;/capture&gt;&gt;
         &lt;/div&gt;
 
-    &lt;&lt;/for&gt;&gt;
-&lt;div class=&quot;skill-allocation-actions&quot;&gt;
-
-    &lt;&lt;if setup.getSkillDraftTotal() &gt; 0&gt;&gt;
-        &lt;&lt;link &quot;RESET&quot;&gt;&gt;
-            &lt;&lt;run setup.resetSkillDraft()&gt;&gt;
-            &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
-                &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-
-        &lt;&lt;link &quot;CONFIRM&quot;&gt;&gt;
-            &lt;&lt;run setup.confirmSkillDraft()&gt;&gt;
-            &lt;&lt;replace &quot;#skills-panel-content&quot;&gt;&gt;
-                &lt;&lt;include &quot;UI_SkillsBody&quot;&gt;&gt;
-            &lt;&lt;/replace&gt;&gt;
-        &lt;&lt;/link&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="UI_Notes" tags="" position="1400,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
-&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="16" name="UI_Quests" tags="" position="1500,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
-&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="17" name="UI_Equipment" tags="" position="1600,0" size="100,100">&lt;h2&gt;NOTES&lt;/h2&gt;
-&lt;p&gt;No entries have been recorded.&lt;/p&gt;</tw-passagedata><tw-passagedata pid="18" name="Awakening.What_Am_I_Success" tags="" position="800,500" size="100,100">Some kind of leader? A handful of souls depend on your choices. Or so it was before. Whether you will ever rebecome it depends on you.</tw-passagedata><tw-passagedata pid="19" name="Awakening.What_Am_I_Failure" tags="" position="800,600" size="100,100">We can feel your limbs, all of them numb. Whatever you were before has long since perished. Now you are nothing more than a cadaver refusing its journey to the morgue. 
-
-Even now we challenge our natural destination.</tw-passagedata><tw-passagedata pid="20" name="Awakening_WhiteUnlock" tags="nobr" position="1000,400" size="100,100">&lt;&lt;if $checks[&quot;awakening.who_am_i&quot;] &amp;&amp;
-      $checks[&quot;awakening.what_am_i&quot;]&gt;&gt;
-
-    &lt;&lt;whiteCheckPrompt
-        &quot;awakening.analyze.find_out_more&quot;
-        &quot;Examine what you have learned.&quot;
-    &gt;&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Awakening_Analyze_Success" tags="" position="1100,300" size="100,100">The fragments arrange themselves into something resembling a memory.
-
-You begin to understand that your awakening was not an accident.</tw-passagedata><tw-passagedata pid="22" name="Awakening_Analyze_Failure" tags="" position="1100,500" size="100,100">You attempt to assemble the scattered fragments of memory.
-
-Nothing fits. You lack the clarity to make sense of what remains.</tw-passagedata><tw-passagedata pid="23" name="WhiteChecks" tags="widget nobr" position="500,0" size="100,100">&lt;&lt;widget &quot;whiteCheckPrompt&quot;&gt;&gt;
+        &lt;p class=&quot;skill-description&quot;&gt;
+            &lt;&lt;= _skill.description&gt;&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="WhiteChecks" tags="widget nobr" position="500,0" size="100,100">&lt;&lt;widget &quot;whiteCheckPrompt&quot;&gt;&gt;
     &lt;&lt;set _whiteId = _args[0]&gt;&gt;
     &lt;&lt;set _whiteLabel = _args[1]&gt;&gt;
     &lt;&lt;set _whiteCheck = setup.activeChecks[_whiteId]&gt;&gt;

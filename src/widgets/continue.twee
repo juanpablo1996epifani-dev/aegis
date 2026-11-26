@@ -1,0 +1,20 @@
+:: ContinueWidget [widget nobr] {"position":"300,0","size":"100,100"}
+<<widget "revealNext">>
+    <<set _includeId = _args[0]>>
+    <<set _label = _args[1] || "CONTINUE" >>
+    <<set _nextInclude = _args.length > 2 ? _args[2] : null>>
+
+    <<capture _includeId _label _nextInclude>>
+        <div class="narrative-continue">
+            <<linkreplace _label>>
+                <div class="narrative-section">
+                    <<include _includeId>>
+                </div>
+
+                <<if _nextInclude>>
+                    <<revealNext _nextInclude>>
+                <</if>>
+            <</linkreplace>>
+        </div>
+    <</capture>>
+<</widget>>

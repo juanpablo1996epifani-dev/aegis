@@ -1,0 +1,58 @@
+:: DisciplineWidgets [widget nobr] {"position":"200,0","size":"100,100"}
+<<widget "disciplinePrompt">>
+    <<set _disciplineId = _args[0]>>
+    <<set _skillId = _args[1]>>
+    <<set _threshold = _args[2]>>
+    <<set _line = _args[3]>>
+    <<set _showFailure = _args.length > 4 && _args[4] === true>>
+    <<set _failureLine = _args[5] || "The thought slips away.">>
+    <<set _responsePassage = _args[6] || null>>
+	<<set _responseLabel = _args[7] || "Respond">>
+
+    <<set _discipline = setup.disciplines[_disciplineId]>>
+    <<set _characterDiscipline = $character.disciplines[_disciplineId]>>
+
+    <<if _discipline && _characterDiscipline>>
+        <<set _skill = _discipline.skills[_skillId]>>
+        <<set _modifier = _characterDiscipline.skills[_skillId]>>
+
+        <<if _skill && typeof _modifier === "number">>
+            <<set _base = 6>>
+            <<set _total = _characterDiscipline.level + _modifier + _base>>
+            <<set _passed = _total >= _threshold>>
+
+            <<set _name = _discipline.name>>
+            <<set _skillName = _skill.name>>
+            <<set _prompt = _skillName.toUpperCase() + " WANTS TO SPEAK">>
+
+            <<set _status = _passed ? "SUCCESS" : "FAILURE">>
+            <<set _tooltip = "Total: " +  _total + " / Threshold: " + _threshold>>
+
+            <<if _passed || _showFailure>>
+                <<capture _disciplineId _prompt _name _skillName _line _failureLine _passed _status _tooltip _responsePassage _responseLabel>>
+                    <span @class=" _args[0] " >
+                       
+<<linkreplace _prompt>>
+    <<if _passed>>
+        <<discipline _disciplineId _skillName _line _status _tooltip>>
+
+        <<if _responsePassage>>
+        	<<revealNext _responsePassage  _responseLabel >>
+        <</if>>
+    <<else>>
+        <<discipline _disciplineId _skillName _failureLine _status _tooltip>>
+    <</if>>
+<</linkreplace>>
+
+                    </span>
+                <</capture>>
+            <</if>>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "status" >><span class="passive-result" @title="_args[1]">(<<= _args[0]>>)</span><</widget>>
+
+<<widget "discipline">>
+    <div @class="'discipline-voice ' + _args[0]"><strong class="discipline-name"><<= _args[1]>>: <<if _args[3] && _args[4] >> <<status _args[3] _args[4] >> <</if>> </strong> <span class="discipline-text"> <<= _args[2]>></span></div>
+<</widget>>

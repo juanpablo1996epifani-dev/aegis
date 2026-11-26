@@ -1,0 +1,55 @@
+
+/* ///////////////// SKIILS UI ////////////// */
+
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.skill-value {
+    margin-right: auto;
+}
+
+.skill-value small {
+    color: #8fd7b1;
+    font-size: 0.75rem;
+}
+
+.skill-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.skill-allocation-summary {
+    margin-bottom: 20px;
+    color: #f0b35a;
+}
+
+.skill-allocation-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.skill-allocation-actions a {
+    padding: 10px 24px;
+    border: 1px solid #8abebe;
+    border-radius: 6px;
+    color: #8abebe;
+    text-decoration: none;
+}
+
+.skill-allocation-actions a:hover {
+    background: #304861;
+    color: #f0b35a;
+}

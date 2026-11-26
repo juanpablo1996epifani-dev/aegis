@@ -1,0 +1,76 @@
+:: RedChecks [widget nobr] {"position":"400,0","size":"100,100"}
+<<widget "redCheckPrompt">>
+    <<set _checkId = _args[0]>>
+    <<set _label = _args[1]>>
+    <<set _check = setup.activeChecks[_checkId]>>
+    <<set _skillName = setup.disciplines[_check.discipline].skills[_check.skill].name>>
+
+    <<capture _checkId _label _skillName>>
+        <<if $checks[_checkId]>>
+            <<redCheckResult _checkId>>
+        <<else>>
+            <div class="red-check-prompt">
+                <div class="check-prompt-header">
+                    <span><<= _skillName>> · RED CHECK</span>
+                    <span>ONE ATTEMPT</span>
+                </div>
+
+               
+<<linkreplace _label>>
+    <<run setup.resolveActiveCheck(_checkId)>>
+
+    <<redCheckResult _checkId>>
+
+    <<replace "#awakening-white-slot">>
+        <<include "Awakening_WhiteUnlock">>
+    <</replace>>
+<</linkreplace>>
+
+            </div>
+        <</if>>
+    <</capture>>
+<</widget>>
+
+
+<<widget "redCheckResult">>
+    <<set _checkId = _args[0]>>
+    <<set _check = setup.activeChecks[_checkId]>>
+    <<set _result = $checks[_checkId]>>
+    
+    
+
+    <<if _check && _result>>
+        <<set _outcomePassage = _result.success
+            ? _check.successPassage
+            : _check.failurePassage>>
+
+        <div @class="'active-check-result ' + _check.discipline">
+            <div class="check-header">
+                <strong>
+                    <<= setup.disciplines[_check.discipline].skills[_check.skill].name>>
+                </strong>
+
+                <span @class="_result.success ? 'check-success' : 'check-failure'">
+                    <<= _result.success ? "SUCCESS" : "FAILURE">>
+                </span>
+            </div>
+
+            <div class="check-dice">
+                <span class="check-die"><<= _result.dice[0]>></span>
+                <span class="check-die"><<= _result.dice[1]>></span>
+
+                <span class="check-modifier">
+                    + <<= _result.discipline + _result.skill>>
+                </span>
+            </div>
+
+            <div class="check-total">
+                <<= _result.total>> / <<= _result.threshold>>
+            </div>
+
+            <div class="check-narrative">
+                <<include _outcomePassage>>
+            </div>
+        </div>
+    <</if>>
+<</widget>>

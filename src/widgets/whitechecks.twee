@@ -1,0 +1,66 @@
+:: WhiteChecks [widget nobr] {"position":"500,0","size":"100,100"}
+<<widget "whiteCheckPrompt">>
+    <<set _whiteId = _args[0]>>
+    <<set _whiteLabel = _args[1]>>
+    <<set _whiteCheck = setup.activeChecks[_whiteId]>>
+    <<set _whiteDomId = "white-" + _whiteId.replace(/[^a-z0-9_-]/gi, "-")>>
+
+    <<if !_whiteCheck || _whiteCheck.type !== "WHITE">>
+        <span class="check-failure">Invalid WHITE check: <<= _whiteId>></span>
+    <<else>>
+        <<capture _whiteId _whiteLabel _whiteDomId>>
+            <div @id="_whiteDomId" class="white-check-container">
+                <<whiteCheckContent _whiteId _whiteLabel _whiteDomId>>
+            </div>
+        <</capture>>
+    <</if>>
+<</widget>>
+
+<<widget "whiteCheckContent">>
+    <<set _whiteId = _args[0]>>
+    <<set _whiteLabel = _args[1]>>
+    <<set _whiteDomId = _args[2]>>
+    <<set _whiteCheck = setup.activeChecks[_whiteId]>>
+    <<set _whiteResult = $checks[_whiteId]>>
+
+    <<capture _whiteId _whiteLabel _whiteDomId>>
+        <<if !_whiteResult>>
+            <div class="white-check-prompt">
+                <div class="check-prompt-header">
+                    <span>
+                        <<= setup.disciplines[_whiteCheck.discipline].skills[_whiteCheck.skill].name>>
+                        · WHITE CHECK
+                    </span>
+                    <span>RETRYABLE</span>
+                </div>
+
+                <<link _whiteLabel>>
+                    <<run setup.resolveActiveCheck(_whiteId)>>
+                    <<replace `"#" + _whiteDomId`>>
+                        <<whiteCheckContent _whiteId _whiteLabel _whiteDomId>>
+                    <</replace>>
+                <</link>>
+            </div>
+        <<else>>
+            <<redCheckResult _whiteId>>
+
+            <<if !_whiteResult.success>>
+                <<if setup.canRetryWhiteCheck(_whiteId)>>
+                    <div class="white-check-retry">
+                        <<link "RETRY WHITE CHECK">>
+                            <<run setup.resolveActiveCheck(_whiteId)>>
+                            <<replace `"#" + _whiteDomId`>>
+                                <<whiteCheckContent _whiteId _whiteLabel _whiteDomId>>
+                            <</replace>>
+                        <</link>>
+                    </div>
+                <<else>>
+                    <div class="white-check-locked">
+                        CHECK LOCKED — Improve the associated Skill
+                        to unlock another attempt.
+                    </div>
+                <</if>>
+            <</if>>
+        <</if>>
+    <</capture>>
+<</widget>>

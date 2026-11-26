@@ -1244,54 +1244,6 @@ Something stirs beyond the dark. An unfamiliar weight. The distant ache of flesh
 A heartbeat drums against the silence, indifferent to your arrival. Lungs draw breath without instruction. The machinery of life has carried on in your absence.
 
 
-:: ContinueWidget [widget nobr] {"position":"300,0","size":"100,100"}
-<<widget "skills">>
-    <<set _disciplineId = _args[0]>>
-    <<set _skillId = _args[1]>>
-
-    <<set _skill = setup.disciplines[_disciplineId].skills[_skillId]>>
-    <<set _value = $character.disciplines[_disciplineId].skills[_skillId]>>
-    <<set _pending = setup.getSkillDraft(_disciplineId, _skillId)>>
-
-    <div class="ui-skill">
-        <div class="skill-header">
-            <strong><<= _skill.name>>:</strong>
-
-            <span class="skill-value">
-                <<= _value + _pending>>
-                <<if _pending > 0>>
-                    <small>(+<<= _pending>> pending)</small>
-                <</if>>
-            </span>
-
-            <<capture _disciplineId _skillId>>
-                <<if setup.getSkillDraft(_disciplineId, _skillId) > 0>>
-                    <<link "−">>
-                        <<run setup.stageSkillUpgrade(_disciplineId, _skillId, -1)>>
-                        <<replace "#skills-panel-content">>
-                            <<include "UI_SkillsBody">>
-                        <</replace>>
-                    <</link>>
-                <</if>>
-
-                <<if setup.getRemainingSkillPoints() > 0>>
-                    <<link "+">>
-                        <<run setup.stageSkillUpgrade(_disciplineId, _skillId, 1)>>
-                        <<replace "#skills-panel-content">>
-                            <<include "UI_SkillsBody">>
-                        <</replace>>
-                    <</link>>
-                <</if>>
-            <</capture>>
-        </div>
-
-        <p class="skill-description">
-            <<= _skill.description>>
-        </p>
-    </div>
-<</widget>>
-
-
 
 <<widget "revealNext">>
     <<set _includeId = _args[0]>>

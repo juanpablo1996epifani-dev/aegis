@@ -1,0 +1,33 @@
+
+.main-menu {
+    max-width: 650px;
+    margin: 12vh auto;
+    text-align: center;
+}
+
+.main-menu h1 {
+    font-size: 3rem;
+    letter-spacing: 0.15em;
+    color: #f0b35a;
+}
+
+.menu-subtitle {
+    color: #8abebe;
+    letter-spacing: 0.25em;
+}
+
+.menu-actions {
+    margin-top: 4rem;
+}
+
+.menu-actions a {
+    display: inline-block;
+    padding: 12px 32px;
+    border: 1px solid #8abebe;
+    color: #f0b35a;
+    text-decoration: none;
+}
+
+.menu-actions a:hover {
+    background: #304861;
+}

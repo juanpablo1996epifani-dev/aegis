@@ -1,0 +1,29 @@
+.container-class {
+    position: relative;
+    transition: background-color .2s, border-color .2s;
+}
+
+.container-class:hover {
+    border-color: #f0b35a;
+    background-color: #21344a;
+}
+
+.container-class .macro-link {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    position: absolute;
+    inset: 0;
+
+    padding: 16px;
+    box-sizing: border-box;
+
+    color: #f0b35a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container-class .macro-link:hover {
+    color: #f0b35a;
+}

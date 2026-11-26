@@ -1,0 +1,33 @@
+:: CharacterCreation {"position":"100,400","size":"100,100"}
+<h2>CHARACTER CREATION</h2>
+<p>Three voices inhabit the mind. Some speak louder than others.</p>
+<div class="container-cards no-br">
+    <div class="container-class">
+        <h3>THE UNYIELDING</h3>
+        <p>Adamant 4 / Noetarch 1 / Anamnesist 2</p>
+
+        <<link "Choose the Unyielding" "Chapter01_Introduction">>
+            <<run setup.applyCharacterPreset("adamant")>>
+        <</link>>
+    </div>
+
+    <div class="container-class">
+        <h3>THE SCHOLAR</h3>
+        <p>Adamant 2 / Noetarch 4 / Anamnesist 1</p>
+
+        <<link "Choose the Scholar" "Chapter01_Introduction">>
+            <<run setup.applyCharacterPreset("noetarch")>>
+        <</link>>
+    </div>
+
+    <div class="container-class">
+        <h3>THE SEER</h3>
+        <p>Adamant 1 / Noetarch 2 / Anamnesist 4</p>
+
+        <<link "Choose the Seer" "Chapter01_Introduction">>
+            <<run setup.applyCharacterPreset("anamnesist")>>
+        <</link>>
+    </div>
+</div>
+<hr>
+[[Return to Main Menu->MainMenu]]

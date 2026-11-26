@@ -1,0 +1,99 @@
+
+.red-check-prompt {
+  	position: relative;
+    margin: 12px 0;
+    padding: 14px 18px;
+    background: #302022;
+    border-left: 3px solid #d15a5a;
+    border-radius: 10px;
+    transition: background .2s, box-shadow .2s;
+}
+
+.red-check-prompt:hover {
+    background: #402629;
+    box-shadow: 0 0 12px rgba(209, 90, 90, .15);
+}
+
+.check-prompt-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color: #e8aaaa;
+}
+
+.red-check-prompt a {
+    display: block;
+    color: #f2d3d3;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.red-check-prompt a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.active-check-result {
+    margin: 16px 0;
+    padding: 18px;
+  	border-width: 3px;
+  	border-style: solid;
+    border-radius: 12px;
+    animation: narrative-reveal .5s ease-out;
+}
+
+.check-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.check-success {
+    color: #8fd7b1;
+}
+
+.check-failure {
+    color: #e28c8c;
+}
+
+.check-dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.check-die {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+  	border-width: 1px;
+  	border-style: solid;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.check-modifier {
+    font-size: 1.1rem;
+}
+
+.check-total {
+    text-align: center;
+    font-weight: bold;
+}
+
+.check-narrative {
+    margin-top: 20px;
+    color: #e7d8ff;
+    line-height: 1.7;
+}

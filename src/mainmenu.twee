@@ -1,0 +1,9 @@
+:: MainMenu {"position":"100,200","size":"100,100"}
+<div class="main-menu">
+    <h1>AEGIS</h1>
+    <p class="menu-subtitle">LAST DEFENSE</p>
+
+    <div class="menu-actions">
+        [[NEW GAME->CharacterCreation]]
+    </div>
+</div>
